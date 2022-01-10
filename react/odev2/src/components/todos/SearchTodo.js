@@ -1,9 +1,28 @@
-import React from 'react'
+import { useState } from 'react'
 
-function SearchTodo() {
+import ListTodos from './ListTodos'
+
+function SearchTodo({todoList}) {
+
+    const [filteredText, setFilteredText] = useState('');
+
+    const filterList = todoList.filter((item) => {
+        return Object.keys(item).some((key) => (
+            item[key]
+                .toString()
+                .toLowerCase()
+                .includes(filteredText.toString())
+        ))
+    })
+
     return (
         <div>
-            Search
+            <input 
+                onChange={(e) => setFilteredText(e.target.value)} 
+                value={filteredText} 
+                placeholder="Search Todo"/>
+            <hr/>
+            <ListTodos filteredList={filterList}/>
         </div>
     )
 }

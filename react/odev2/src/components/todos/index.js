@@ -1,16 +1,30 @@
 import '../../app.css'
 
-import SearchBar from './SearchTodo'
-import ListTodos from './ListTodos'
+import SearchTodo from './SearchTodo'
 import InputTodos from './InputTodos'
+import { useEffect, useState } from 'react'
+
+const defaultList = [
+    {
+        text: "30 days of Javascript",
+        completed: true
+    },
+    {
+        text: "Live your life",
+        completed: false
+    }
+]
 
 function Todo() {
+
+    const [todoList, setTodoList] = useState(defaultList)
+
     return (
         <div className='todos-container'>
             <h2>Todos</h2>
-            <SearchBar />
-            <ListTodos />
-            <InputTodos />
+            <SearchTodo todoList={todoList} />
+            <hr />
+            <InputTodos setTodoList={setTodoList} todoList={todoList} />
         </div>
     )
 }

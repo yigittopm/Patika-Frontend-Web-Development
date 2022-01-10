@@ -1,10 +1,10 @@
-import React from 'react'
-
-function ListTodos() {
+function ListTodos({filteredList}) {
     return (
-        <div>
-            Lists
-        </div>
+        <ul>
+            {filteredList.map((item, index) => (
+                <li key={index}>{item.text}</li>
+            ))}
+        </ul>
     )
 }
 

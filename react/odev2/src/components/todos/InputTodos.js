@@ -1,10 +1,29 @@
-import React from 'react'
+import { useState } from 'react'
 
-function InputTodos() {
+function InputTodos({todoList, setTodoList}) {
+
+    const [todoText, setTodoText] = useState('')
+
+    const createTodo = (e) => {
+        e.preventDefault()
+
+        if(todoText !== '') {
+            setTodoList([...todoList, {
+                text: todoText,
+                completed: false
+            }])
+        }
+        setTodoText('')
+    }
+
     return (
-        <div>
-            İnputs
-        </div>
+        <form onSubmit={createTodo}>
+            <input 
+                value={todoText}
+                onChange={(e) => setTodoText(e.target.value)}
+                placeholder='Create a new Todo'/>
+            <button>New Todo</button>
+        </form>
     )
 }
 
