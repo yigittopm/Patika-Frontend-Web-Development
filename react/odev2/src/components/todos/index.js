@@ -2,7 +2,7 @@ import '../../app.css'
 
 import SearchTodo from './SearchTodo'
 import InputTodos from './InputTodos'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const defaultList = [
     {
@@ -21,9 +21,8 @@ function Todo() {
 
     return (
         <div className='todos-container'>
-            <h2>Todos</h2>
-            <SearchTodo todoList={todoList} />
-            <hr />
+            <h2 className='title'>todos</h2>
+            <SearchTodo setTodoList={setTodoList} todoList={todoList} />
             <InputTodos setTodoList={setTodoList} todoList={todoList} />
         </div>
     )

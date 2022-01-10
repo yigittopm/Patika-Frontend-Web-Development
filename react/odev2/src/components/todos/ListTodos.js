@@ -1,8 +1,30 @@
-function ListTodos({filteredList}) {
+import '../../app.css'
+
+function ListTodos({filteredList, setTodoList}) {
+
+    const deleteItem = (event, item) => {
+        const deletedList = filteredList.filter((todo) => todo !== item)
+        console.log(deleteItem)
+    }
+
+    const completedItem = (e, item) => {
+        e.preventDefault()
+        console.log(item)
+    }
+
     return (
-        <ul>
+        <ul className='list-ul'>
             {filteredList.map((item, index) => (
-                <li key={index}>{item.text}</li>
+                <li className={item.completed ? 'list-li completed-li' : 'list-li'}
+                    onClick={e => completedItem(e, item)}
+                    key={index}>
+                        {item.text} 
+                        <span 
+                            onClick={event => deleteItem(event, item)} 
+                            className='delete-li'>
+                                x
+                            </span>
+                </li>
             ))}
         </ul>
     )

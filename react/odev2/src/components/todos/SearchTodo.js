@@ -1,8 +1,10 @@
+import '../../app.css'
+
 import { useState } from 'react'
 
 import ListTodos from './ListTodos'
 
-function SearchTodo({todoList}) {
+function SearchTodo({todoList, setTodoList}) {
 
     const [filteredText, setFilteredText] = useState('');
 
@@ -11,7 +13,7 @@ function SearchTodo({todoList}) {
             item[key]
                 .toString()
                 .toLowerCase()
-                .includes(filteredText.toString())
+                .includes(filteredText.toString().toLowerCase())
         ))
     })
 
@@ -20,9 +22,8 @@ function SearchTodo({todoList}) {
             <input 
                 onChange={(e) => setFilteredText(e.target.value)} 
                 value={filteredText} 
-                placeholder="Search Todo"/>
-            <hr/>
-            <ListTodos filteredList={filterList}/>
+                placeholder=" Search Todo"/>
+            <ListTodos setTodoList={setTodoList} filteredList={filterList}/>
         </div>
     )
 }

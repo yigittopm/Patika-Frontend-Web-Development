@@ -1,3 +1,5 @@
+import '../../app.css'
+
 import { useState } from 'react'
 
 function InputTodos({todoList, setTodoList}) {
@@ -17,12 +19,15 @@ function InputTodos({todoList, setTodoList}) {
     }
 
     return (
-        <form onSubmit={createTodo}>
-            <input 
+        <form onSubmit={createTodo} className='form-group'>
+            <input
+                className={ todoText !== '' && 'create-input'}
                 value={todoText}
                 onChange={(e) => setTodoText(e.target.value)}
-                placeholder='Create a new Todo'/>
-            <button>New Todo</button>
+                placeholder=' Create a new Todo'/>
+            {
+                todoText !== '' ? <button className='create-button'>+</button> : null
+            }
         </form>
     )
 }

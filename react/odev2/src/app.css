@@ -1,12 +1,79 @@
 * {
-    /*background-image: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, #a8eb12);*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 24px;
+    font-family: 'Anton', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    color: #004d7a;
 }
 
 .app-container {
-    
+    background-image: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    height: 100vh;
+    display: flex;
 }
 
 .todos-container {
-    justify-content: center;
-    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 40%;
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 30px;
+    font-size: 3rem;
+    font-weight: 50;
+    color: black;
+}
+
+input {
+    width: 220px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(181, 181, 181);
+}
+
+::placeholder {
+    color: rgb(216, 216, 216);
+}
+
+.list-ul {
+    margin: 20px;
+}
+
+.list-ul > .list-li {
+    list-style-type: none;
+    border-color: rgba(206, 206, 206, .3);
+}
+
+.list-ul > .list-li > .delete-li {
+    margin-left: 3px;
+    text-decoration: none !important;
+    color: red;
+    cursor: pointer;
+}
+
+.create-input {
+    width: 190px;
+    border-radius: 5px 0 0 5px;
+}
+
+.form-group {
+    display: inline;
+}
+
+.create-button {
+    display: inline-block;
+    background-color: green;
+    color: white;
+    width: 30px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+}
+
+.completed-li {
+    text-decoration: line-through;
 }
