@@ -1,9 +1,11 @@
-import User from "./components/User";
+import './app.css'
+
+import Todo from './components/todos'
 
 function App() {
   return (
-    <div>
-      <User/>
+    <div className='app-container'>
+      <Todo/>
     </div>
   );
 }
