@@ -4,11 +4,11 @@ import ThemeContext from '../context/ThemeContext';
 
 function Button() {
 
-    const data = useContext(ThemeContext);
+    const {theme} = useContext(ThemeContext);
 
     return (
         <div>
-            <h1>Button {data}</h1>
+            <h1>Button {theme}</h1>
         </div>
     )
 }
