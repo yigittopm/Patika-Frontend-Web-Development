@@ -1,0 +1,14 @@
+.header {
+    height: 60px;
+    width: 450px;
+    background-color: lightblue;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.select {
+    outline: none;
+    font-size: 16px;
+    border-radius: 3px;
+    background-color: lightblue;
+}
