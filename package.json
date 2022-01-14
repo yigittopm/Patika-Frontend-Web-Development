@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "axios": "^0.24.0",
-    "dotenv": "^11.0.0",
-    "formik": "^2.2.9"
-  }
-}
