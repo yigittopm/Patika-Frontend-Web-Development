@@ -7,10 +7,13 @@ import { CityProvider } from './context/CityContext';
 
 function App() {
   return (
-    <CityProvider>
-      <Header />
-      <WeatherList />
-    </CityProvider>
+    <div className='App'>
+      <CityProvider>
+        <Header />
+        <WeatherList />
+      </CityProvider>
+    </div>
+    
   );
 }
 

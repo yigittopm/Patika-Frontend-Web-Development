@@ -1,14 +1,19 @@
 .header {
-    height: 60px;
-    width: 450px;
-    background-color: lightblue;
-    border-radius: 10px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    vertical-align: sub;
 }
 
 .select {
+    margin-top: 130px;
+    text-align: center;
     outline: none;
+    height: 40px;
+    width: 120px;
     font-size: 16px;
-    border-radius: 3px;
-    background-color: lightblue;
+    border-radius: 10px;
+    cursor: pointer;
 }

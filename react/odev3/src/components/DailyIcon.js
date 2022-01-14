@@ -1,14 +1,24 @@
-import React from 'react'
+import './style/DailyIcon.css'
 
+import React from 'react'
 import Image from './Image'
 
 function DailyIcon({data}) {
 
-    // const {icon, description} = data ? data[9].weather[0] : null
+    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+    const {icon, main} = data ? data.weather[0] : null
+
+    const dateTxt = data ? data.dt_txt : null
+    const fullDate = dateTxt.split(' ')[0]
+    const dayIndex = new Date(fullDate).getDay()
+    const dayName = days[dayIndex]
 
     return (
         <div className='daily-icon'>
-            <Image name="01n"/>
+            <p>{dayName}</p>
+            <Image name={icon}/>
+            <p>{main}</p>
         </div>
     )
 }
